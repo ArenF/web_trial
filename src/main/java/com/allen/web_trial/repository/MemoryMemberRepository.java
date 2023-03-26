@@ -1,8 +1,10 @@
 package com.allen.web_trial.repository;
 
 import com.allen.web_trial.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 
 public class MemoryMemberRepository implements MemberRepository {
 

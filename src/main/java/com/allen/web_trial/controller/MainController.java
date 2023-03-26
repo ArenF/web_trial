@@ -1,4 +1,4 @@
-package com.allen.web_trial.container;
+package com.allen.web_trial.controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -13,5 +13,11 @@ public class MainController {
     public String controller(@RequestParam("name") String name, Model model) {
         model.addAttribute("name", name);
         return "controller";
+    }
+
+    @GetMapping("/starter")
+    public String starter(@RequestParam("name") String name, Model model) {
+        model.addAttribute("name", name);
+        return "starter";
     }
 }

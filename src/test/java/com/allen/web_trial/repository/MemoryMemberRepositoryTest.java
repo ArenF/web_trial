@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
@@ -40,7 +42,8 @@ class MemoryMemberRepositoryTest {
 
         Member result = memoryMemberRepository.findByName("spring2").get();
 
-        Assertions.assertEquals(member2, result);
+//        Assertions.assertEquals(member2, result);
+        assertThat(result).isEqualTo(member2);
     }
 
     @Test
@@ -55,7 +58,8 @@ class MemoryMemberRepositoryTest {
 
         List<Member> result = memoryMemberRepository.findAll();
 
-        Assertions.assertEquals(2, result.size());
+//        Assertions.assertEquals(2, result.size());
+        assertThat(result.size()).isEqualTo(2);
     }
 
 

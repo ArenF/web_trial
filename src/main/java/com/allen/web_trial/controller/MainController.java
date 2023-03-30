@@ -14,10 +14,4 @@ public class MainController {
         model.addAttribute("name", name);
         return "controller";
     }
-
-    @GetMapping("/starter")
-    public String starter(@RequestParam("name") String name, Model model) {
-        model.addAttribute("name", name);
-        return "starter";
-    }
 }

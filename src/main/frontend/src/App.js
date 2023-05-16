@@ -1,10 +1,12 @@
 // import logo from './logo.svg';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import axios from 'axios';
 
 import './index.css';
 import './custom/css/sidenav.css';
 import './custom/css/image-box.css';
+import './custom/css/invisible.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -94,6 +96,21 @@ class ImageBox extends React.Component {
           {this.props.children}
         </div>
       </div>
+    );
+  }
+}
+
+class InvisibleButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.name = this.props.name;
+  }
+
+  render() {
+    return(
+      <button className='invisible_button'>
+        {this.name}
+      </button>
     );
   }
 }

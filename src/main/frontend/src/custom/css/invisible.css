@@ -1,0 +1,7 @@
+.invisible_button {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+}

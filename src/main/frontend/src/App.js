@@ -7,6 +7,7 @@ import './index.css';
 import './custom/css/sidenav.css';
 import './custom/css/image-box.css';
 import './custom/css/invisible.css';
+import './custom/css/backgroundColor.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -78,16 +79,16 @@ class ImageBox extends React.Component {
     this.state = {
       w: this.props.width,
       h: this.props.height,
-      imageSrc: this.props.public_image_file
+      imageSrc: this.props.public_image_file,
     };
   }
 
   render() {
-    var styleMessage = {
+    const styleMessage = {
       width: this.state.w,
       height: this.state.h,
       background: 'url(' + this.state.imageSrc + ')',
-      position: 'relative'
+      backgroundRepeat: 'no-repeat'
     };
 
     return (
@@ -104,13 +105,16 @@ class InvisibleButton extends React.Component {
   constructor(props) {
     super(props);
     this.name = this.props.name;
+
   }
 
   render() {
     return(
-      <button className='invisible_button'>
-        {this.name}
-      </button>
+      <div className='center_box'>
+        <button className='invisible_button'>
+          {this.name}
+        </button>
+      </div>
     );
   }
 }
@@ -121,29 +125,41 @@ class InvisibleButton extends React.Component {
 // }
 
 function App() {
+
   return (
-    <div>
-      <>
-      <SideNav />
-      <ImageBox public_image_file='/resources/balloon.jpg' width='1920px' height='898px' color='orange'>
-        <div className='font-box' style={{ width:'898px' }}>
-          <h1 className='title'>ImageBox</h1>
-          <div className='line'></div>
-          <p className='description'>This is none params. add some description.</p>
+    <>
+      <div className='dark_blue_background'>  
+        <SideNav />
+        <ImageBox 
+          public_image_file='/resources/balloon.jpg'
+          width='100vw'
+          height='100vh' 
+          color='orange'
+        >
+          <div className='font-box' style={{ width:'898px' }}>
+            <h1 className='title'>ImageBox</h1>
+            <div className='line'></div>
+            <p className='description'>params No vela laitus le valem leture</p>
+          </div>
+        </ImageBox>
+        <div className='flex-sort sort-start'>
+          <ImageBox public_image_file='/resources/citystreet.jpg' width='640px' height='427px' color='blue'>
+            <InvisibleButton name='City Street' />
+          </ImageBox>
+          <ImageBox public_image_file='/resources/comfortable.jpg' width='640px' height='427px' color='orange'>
+            <InvisibleButton name='Comfortable' />
+          </ImageBox>
         </div>
-      </ImageBox>
-      <ImageBox public_image_file='/resources/citystreet.jpg' width='640px' height='427px' color='blue'>
-        <div className='font-box'>
-          <h2 className='center-title'>City Street</h2>
-        </div>
-      </ImageBox>
-      <ImageBox public_image_file='/resources/citystreet.jpg' width='640px' height='427px' color='orange'>
-        <div className='font-box'>
-          <h2 className='center-title'>City Style</h2>
-        </div>
-      </ImageBox>
-      </>
-    </div>
+        <div className='flex-sort sort-end'>
+          <ImageBox public_image_file='/resources/aurora.jpg' width='640px' height='427px' color='blue'>
+            <InvisibleButton name='Aurora' />
+          </ImageBox>
+          <ImageBox public_image_file='/resources/rest.jpg' width='640px' height='427px' color='orange'>
+            <InvisibleButton name='Rest' />
+          </ImageBox>
+        </div>      
+      </div>
+    </>
   )
 }
 

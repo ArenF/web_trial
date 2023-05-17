@@ -1,7 +1,33 @@
+.center_box {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+}
+
 .invisible_button {
-    margin: 0;
+    position: relative;
     background-color: transparent;
+    margin: 0;
     color: white;
     font-weight: bold;
-    border: 1px solid white;
+    font-size: 32px;
+    width: auto;
+    height: auto;
+    padding: 2em 4em;
+    border: transparent;
+    transition: all 0.2s;
+}
+
+.invisible_button:active {
+    color: gray;
+}
+
+.invisible_button:hover {
+    transform: scale(1.2);
 }

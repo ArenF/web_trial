@@ -7,14 +7,11 @@ import './index.css';
 import './custom/css/sidenav.css';
 import './custom/css/image-box.css';
 import './custom/css/invisible.css';
-import './custom/css/backgroundColor.css'
+import './custom/css/backgroundColor.css';
+import './custom/css/underBar.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-
-// 즉 이것도 객체지향 프로그램의 일부분이며 javascript의 원리를 따라간다.
-// 그런고로 만약 세세한 부분을 나누고 그걸 만들며 전체를 다루는 App 클래스에 넣는다는 식으로 구성을 한다면
-// 그것이 React의 활용방식이다.
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 class SideNav extends React.Component {
   constructor(props) {
@@ -59,7 +56,7 @@ class SideNav extends React.Component {
        className='open-button'
        onClick={this.handleOpen}
       >
-        <FontAwesomeIcon icon={faXmark} size='2x'/>
+        <FontAwesomeIcon icon={faBars} size='2x'/>
       </button>
       </>
     }
@@ -119,6 +116,18 @@ class InvisibleButton extends React.Component {
   }
 }
 
+function UnderBar() {
+  return(
+    <footer className='footer_frame dark_blue_background'>
+      <form action="post" className='footer_section'>
+        <p className='footer_section'>If you wrote to me some any idea or commision. please request me</p>
+        <textarea className='input_area' name="RequestMessage" id="request" cols="30" rows="10"></textarea>
+        <button className='sending_request'><p>Send!</p></button>
+      </form>
+    </footer>
+  );
+}
+
 // function ImageBox() {
 //   // let size = [props.state.x, props.state.y];
 //   // let image = props.state.image_src;
@@ -128,7 +137,7 @@ function App() {
 
   return (
     <>
-      <div className='dark_blue_background'>  
+      <div className='blue_background'>
         <SideNav />
         <ImageBox 
           public_image_file='/resources/balloon.jpg'
@@ -157,7 +166,8 @@ function App() {
           <ImageBox public_image_file='/resources/rest.jpg' width='640px' height='427px' color='orange'>
             <InvisibleButton name='Rest' />
           </ImageBox>
-        </div>      
+        </div>
+        <UnderBar/>
       </div>
     </>
   )

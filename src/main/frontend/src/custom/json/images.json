@@ -1,0 +1,22 @@
+{
+    "1": {
+        "path":"/resources/aurora.jpg",
+        "name":"Aurora"
+    },
+    "2": {
+        "path":"/resources/balloon.jpg",
+        "name":"Adventure"
+    },
+    "3": {
+        "path":"/resources/citystreet.jpg",
+        "name":"City Style"
+    },
+    "4": {
+        "path":"/resources/comfortable.jpg",
+        "name":"Comfortable"
+    },
+    "5": {
+        "path":"/resources/rest.jpg",
+        "name":"Rest"
+    }
+}

@@ -1,6 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
+import '../CSS/navbar.css';
+
+import Home from '../Pages/Home';
+import Login from '../Pages/Login';
+
 class NavigationBar extends React.Component {
     render() {
       return (
@@ -22,7 +27,8 @@ export default function NavBar() {
             <NavigationBar />
 
             <Routes>
-                <Route exact path='/' element={<></>}></Route>
+                <Route exact path='/' element={<Home/>}/>
+                <Route path='/login' element={<Login/>}/>
             </Routes>
         </BrowserRouter>
     );

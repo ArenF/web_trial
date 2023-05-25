@@ -4,27 +4,44 @@
     display: flex;
     width: 100vw;
     height: 52px;
-    background-color: #dcdcdc;
+    background-color: #13264E;
 }
 
 .right_line {
+    margin: 0;
     position: absolute;
     width: 100vw;
+    height: 100%;
     text-align: center;
+    border: 1px solid red;
 }
 
 .right_line li {
+    border: 1px solid orange;
+    position: relative;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0px 20px;
+    padding: 0;
+    /* top으로 이동시키고 line-height로 세로에서 중앙 배치 */
+    top: 25%;
+    line-height: 100%;
 }
 
-.right_line li button {
+.right_line li .nav-link {
+    position: relative;
     width: 180px;
     background-color: transparent;
-    border: 0;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
 }
 
-.right_line li button:hover {
+.right_line li .nav-linkclick {
+    text-decoration: none;
+    color: #558BCF;
+}
+
+.right_line li .nav-link:hover {
     font-size: larger;
     font-weight: bold;
 }

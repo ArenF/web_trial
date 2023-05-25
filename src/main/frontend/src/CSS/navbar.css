@@ -1,0 +1,30 @@
+.navigation_bar {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 52px;
+    background-color: #dcdcdc;
+}
+
+.right_line {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+}
+
+.right_line li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.right_line li button {
+    width: 180px;
+    background-color: transparent;
+    border: 0;
+}
+
+.right_line li button:hover {
+    font-size: larger;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+.login_form {
+    position: absolute;
+    width: 860px;
+    height: 480px;
+    background-color: aliceblue;
+    
+}
+
+.text_input {
+    position: relative;
+    border-radius: 50px;
+    width: 820px;
+    height: 48px;
+    background-color: #b4d8e773;
+}

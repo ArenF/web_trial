@@ -1,71 +1,34 @@
 // import logo from './logo.svg';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import axios from 'axios';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './index.css';
-import './custom/css/sidenav.css';
-import './custom/css/image-box.css';
-import './custom/css/invisible.css';
-import './custom/css/backgroundColor.css';
-import './custom/css/underBar.css';
+import './CSS/navbar.css';
+import './CSS/image-box.css';
+import './CSS/invisible.css';
+import './CSS/backgroundColor.css';
+import './CSS/underBar.css';
+
+import LoginForm from './custom/jsx/Login';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-class SideNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {open: true}
-    this.handleOpen = this.handleOpen.bind(this);
-  }
-
-  handleOpen() {
-    this.setState(state => ({
-      open: !state.open
-    }));
-    console.log("Hello world!");
-  }
-
+class NavigationBar extends React.Component {
   render() {
-    const isOpen = this.state.open;
-    let sideNavigation;
-
-    if (isOpen) {
-      sideNavigation = 
-      <>
-      <div className='sidenav'>
-        <button
-         className='close-button'
-         onClick={this.handleOpen}
-        >
-          <FontAwesomeIcon icon={faXmark} size='2x'/>
-        </button>
-        <ul className='items'>
-          <li><a href="#">MAIN</a></li>
-          <li><a href="#">LOGIN</a></li>
-          <li><a href="#">WRITE</a></li>
-          <li><a href="#">FAQ</a></li>
+    return (
+      <div className='navigation_bar'>
+        <ul className='right_line'>
+          <li><button onClick={() => {
+            return
+          }}>HOME</button></li>
+          <li><button>LOGIN</button></li>
+          <li><button>WRITE</button></li>
+          <li><button>FAQ</button></li>
         </ul>
       </div>
-      </>
-    } else {
-      sideNavigation = 
-      <>
-      <button
-       className='open-button'
-       onClick={this.handleOpen}
-      >
-        <FontAwesomeIcon icon={faBars} size='2x'/>
-      </button>
-      </>
-    }
-
-    return (
-      <div className='sideNavBar'>
-        {sideNavigation}
-      </div> 
-    )
+    );
   }
 }
 
@@ -137,38 +100,48 @@ function App() {
 
   return (
     <>
-      <div className='blue_background'>
-        <SideNav />
-        <ImageBox 
-          public_image_file='/resources/balloon.jpg'
-          width='100vw'
-          height='100vh' 
-          color='orange'
-        >
-          <div className='font-box' style={{ width:'898px' }}>
-            <h1 className='title'>ImageBox</h1>
-            <div className='line'></div>
-            <p className='description'>params No vela laitus le valem leture</p>
+      <BrowserRouter>
+        <div className='blue_background'>
+          <NavigationBar/>
+          <ImageBox 
+            public_image_file='/resources/balloon.jpg'
+            width='100vw'
+            height='100vh' 
+            color='orange'
+          >
+            <div className='font-box' style={{ width:'898px' }}>
+              <h1 className='title'>ImageBox</h1>
+              <div className='line'></div>
+              <div className='flex'>
+                <p className='description'>params No vela laitus le valem leture</p>
+
+              </div>
+
+            </div>
+          </ImageBox>
+          <div className='flex-sort sort-start'>
+            <ImageBox public_image_file='/resources/citystreet.jpg' width='640px' height='427px' color='blue'>
+              <InvisibleButton name='City Street' />
+            </ImageBox>
+            <ImageBox public_image_file='/resources/comfortable.jpg' width='640px' height='427px' color='orange'>
+              <InvisibleButton name='Comfortable' />
+            </ImageBox>
           </div>
-        </ImageBox>
-        <div className='flex-sort sort-start'>
-          <ImageBox public_image_file='/resources/citystreet.jpg' width='640px' height='427px' color='blue'>
-            <InvisibleButton name='City Street' />
-          </ImageBox>
-          <ImageBox public_image_file='/resources/comfortable.jpg' width='640px' height='427px' color='orange'>
-            <InvisibleButton name='Comfortable' />
-          </ImageBox>
+          <div className='flex-sort sort-end'>
+            <ImageBox public_image_file='/resources/aurora.jpg' width='640px' height='427px' color='blue'>
+              <InvisibleButton name='Aurora' />
+            </ImageBox>
+            <ImageBox public_image_file='/resources/rest.jpg' width='640px' height='427px' color='orange'>
+              <InvisibleButton name='Rest' />
+            </ImageBox>
+          </div>
+          <UnderBar/>
         </div>
-        <div className='flex-sort sort-end'>
-          <ImageBox public_image_file='/resources/aurora.jpg' width='640px' height='427px' color='blue'>
-            <InvisibleButton name='Aurora' />
-          </ImageBox>
-          <ImageBox public_image_file='/resources/rest.jpg' width='640px' height='427px' color='orange'>
-            <InvisibleButton name='Rest' />
-          </ImageBox>
-        </div>
-        <UnderBar/>
-      </div>
+
+        <Routes>
+          <Route path="/login" element={<LoginForm/>} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

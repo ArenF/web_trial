@@ -1,9 +1,9 @@
 import React from 'react';
 
-import '../CSS/backgroundColor.css';
-import '../CSS/invisible.css';
-import '../CSS/image-box.css';
-import '../CSS/underBar.css';
+import '../CSS/HomePage/backgroundColor.css';
+import '../CSS/HomePage/invisible.css';
+import '../CSS/HomePage/image-box.css';
+import '../CSS/HomePage/underBar.css';
 
 class ImageBox extends React.Component {
 
@@ -21,7 +21,8 @@ class ImageBox extends React.Component {
         width: this.state.w,
         height: this.state.h,
         background: 'url(' + this.state.imageSrc + ')',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       };
   
       return (
@@ -78,11 +79,14 @@ export default function App() {
             color='orange'
           >
             <div className='font-box' style={{ width:'898px' }}>
-              <h1 className='title'>ImageBox</h1>
+              <h1 className='title'>Write For All</h1>
               <div className='line'></div>
-              <div className='flex'>
-                <p className='description'>params No vela laitus le valem leture</p>
-
+              <div className='flex-sort'>
+                <p className='description'>
+                  노트를 작성하고 모두에게 공유하세요. 당신의 메모는 누군가에게 영감을 주거나
+                  마음을 흔들어보세요. 당신의 작은 말이 전해지도록 메모를 남겨주세요.
+                </p>
+                <button className='start-button'>START</button>
               </div>
 
             </div>

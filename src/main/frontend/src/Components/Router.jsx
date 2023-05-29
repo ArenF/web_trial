@@ -5,6 +5,7 @@ import '../CSS/navbar.css';
 
 import Home from '../Pages/Home';
 import Login from '../Pages/Login';
+import Board from '../Pages/Board';
 
 class NavigationBar extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class NavigationBar extends React.Component {
           <ul className='right_line'>
             <li><NavLink className={({isActive}) => "nav-link" + (isActive ? "click" : "")} to='/'>HOME</NavLink></li>
             <li><NavLink className={({isActive}) => "nav-link" + (isActive ? "click" : "")} to='/login'>LOGIN</NavLink></li>
+            <li><NavLink className={({isActive}) => "nav-link" + (isActive ? "click" : "")} to='/board'>BOARD</NavLink></li>
             <li><NavLink className={({isActive}) => "nav-link" + (isActive ? "click" : "")} to='/write'>WRITE</NavLink></li>
             <li><NavLink className={({isActive}) => "nav-link" + (isActive ? "click" : "")} to='/faq'>FAQ</NavLink></li>
           </ul>
@@ -29,6 +31,7 @@ export default function NavBar() {
             <Routes>
                 <Route exact path='/' element={<Home/>}/>
                 <Route path='/login' element={<Login/>}/>
+                <Route path='/board' element={<Board/>}/>
             </Routes>
         </BrowserRouter>
     );

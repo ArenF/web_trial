@@ -1,10 +1,50 @@
-.main-card {
+body {
+    margin: 0;
+    background-color: rgb(227, 227, 227);
+    box-sizing: border-box;
+}
+
+.mainboard {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.border {
+.cardBoard {
+    position: relative;
+    width: 20rem;
+    height: auto;
+    background-color: rgb(255, 255, 255);
     border: 1px solid gray;
+    border-radius: 15px;
+    padding-bottom: 15px;
+}
+
+.board-line {
+    margin: 0.5em 0;
+    width: 15rem;
+    height: 0;
+    border: 1px solid gray;
+}
+
+.board-image {
+    position: relative;
+    width: auto;
+    min-height: 12rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.board-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    
+}
+
+.board-content {
+    font-size: 12px;
+    color: gray;
 }

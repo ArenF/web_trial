@@ -38,25 +38,40 @@ body {
 
 .board-title {
     margin: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
     font-size: 18px;
     font-weight: bold;
     color: black;
-    
 }
 
 .board-content {
+    margin: 0 0.5rem;
     font-size: 12px;
     color: gray;
 }
 
 .profile-field {
+    position: relative;
     display: flex;
+    justify-content: baseline;
     align-items: baseline;
-    padding: 5px;
+    padding: 5px;   
 }
 
 .profile-field > * {
     border: 1px solid red;
+}
+
+.right-field {
+    margin-right: 5px;
+    position: absolute;
+    padding: 0px;
+    right: 0;
+    display: flex;
+    float: inline-start;
+    align-items: baseline;
+    justify-content: baseline;
 }
 
 .author-profile {
@@ -68,9 +83,9 @@ body {
 }
 
 .user-icon {
-    right: 0;
+    position: relative;
 }
 
 .joinner {
-    right: 0;
+    position: relative;
 }

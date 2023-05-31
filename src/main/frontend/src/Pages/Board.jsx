@@ -36,12 +36,22 @@ class CardBoard extends React.Component {
                 <div className="profile-field">
                     <div className="author-profile"></div>
                     <p className="author-name">{this.state.author}</p>
-                    <FontAwesomeIcon className="user-icon" icon={faUser} size="0.5x" />
-                    <p className="joinner">{this.state.joinCount}</p>
+                    <div className="right-field">
+                        <FontAwesomeIcon className="user-icon" icon={faUser} size="0.5x" />
+                        <p className="joinner">{this.state.joinCount}</p>
+                    </div>
                 </div>
             </div>
         );
     }
+}
+
+function firstLine(props) {
+    return (
+        <div>
+            {props.children}
+        </div>
+    );
 }
 
 export default function App() {

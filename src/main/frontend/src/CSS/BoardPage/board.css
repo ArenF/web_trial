@@ -19,6 +19,7 @@ body {
     border: 1px solid gray;
     border-radius: 15px;
     padding-bottom: 15px;
+    margin: 0;
 }
 
 .board-line {
@@ -59,9 +60,9 @@ body {
     padding: 5px;   
 }
 
-.profile-field > * {
+/* .profile-field > * {
     border: 1px solid red;
-}
+} */
 
 .right-field {
     margin-right: 5px;
@@ -88,4 +89,24 @@ body {
 
 .joinner {
     position: relative;
+}
+
+.first-line {
+    z-index: 1;
+    position: relative;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    padding-top: 3rem;
+}
+
+.second-line {
+    z-index: 1;
+    position: relative;
+    border: 1px sold red;
+    padding: 1rem 1rem;
+    padding-top: 5rem;
+}
+
+.first-line > * {
+    margin: 1rem 0;
 }

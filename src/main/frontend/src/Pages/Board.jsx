@@ -46,9 +46,17 @@ class CardBoard extends React.Component {
     }
 }
 
-function firstLine(props) {
+function FirstLine(props) {
     return (
-        <div>
+        <div className="first-line">
+            {props.children}
+        </div>
+    );
+}
+
+function SecondLine(props) {
+    return(
+        <div className="second-line">
             {props.children}
         </div>
     );
@@ -56,10 +64,20 @@ function firstLine(props) {
 
 export default function App() {
     return(
-        <div className="mainboard">
-            <CardBoard imageSrc="/resources/citystreet.jpg" title="CityStyle"
-            contents="we must face our city and society, city is beautiful but, also criminal and
-            lonely." author='John Smith' join='12'/>
+        // <div className="mainboard">
+        //     <CardBoard imageSrc="/resources/citystreet.jpg" title="CityStyle"
+        //     contents="we must face our city and society, city is beautiful but, also criminal and
+        //     lonely." author='John Smith' join='12'/>
+        // </div>
+        <div>
+            <FirstLine>
+                <CardBoard imageSrc="/resources/aurora.jpg" title="Fantastic"
+                contents="Fantsitc Dream or images is very effective insight"
+                author="Allan Feather" join="12" />
+                <CardBoard imageSrc="/resources/camera.jpg" title="Adventure" 
+                contents="Adventure is very attractive activity that someone's"
+                author="John Smith" join="10" />
+            </FirstLine>
         </div>
     );
 }

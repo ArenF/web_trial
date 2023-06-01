@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../CSS/BoardPage/board.css";
 
 //게시글 카드
+//참고할 것 https://codepen.io/utilitybend/pen/bGvjLba
 class CardBoard extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +23,7 @@ class CardBoard extends React.Component {
             background: 'url(' + this.state.image + ')',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            backgroundColor: 'beige'
+            backgroundColor: 'beige',
         }
     }
 
@@ -69,7 +70,7 @@ export default function App() {
         //     contents="we must face our city and society, city is beautiful but, also criminal and
         //     lonely." author='John Smith' join='12'/>
         // </div>
-        <div>
+        <div className="flex">
             <FirstLine>
                 <CardBoard imageSrc="/resources/aurora.jpg" title="Fantastic"
                 contents="Fantsitc Dream or images is very effective insight"
@@ -78,6 +79,11 @@ export default function App() {
                 contents="Adventure is very attractive activity that someone's"
                 author="John Smith" join="10" />
             </FirstLine>
+            <SecondLine>
+                <CardBoard imageSrc="/resources/rest.jpg" title="Having Vacation"
+                contents="Have a rest is a important for me. so I goto the london for ..."
+                author="Mike Schumit" join="12" />
+            </SecondLine>
         </div>
     );
 }

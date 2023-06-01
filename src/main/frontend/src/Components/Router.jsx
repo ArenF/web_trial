@@ -6,6 +6,7 @@ import '../CSS/navbar.css';
 import Home from '../Pages/Home';
 import Login from '../Pages/Login';
 import Board from '../Pages/Board';
+import Write from '../Pages/Write';
 
 class NavigationBar extends React.Component {
     render() {
@@ -32,6 +33,7 @@ export default function NavBar() {
                 <Route exact path='/' element={<Home/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/board' element={<Board/>}/>
+                <Route path='/write' element={<Write/>}/>
             </Routes>
         </BrowserRouter>
     );

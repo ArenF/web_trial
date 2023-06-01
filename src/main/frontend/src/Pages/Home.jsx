@@ -84,7 +84,7 @@ export default function App() {
               <div className='flex-sort'>
                 <p className='description'>
                   노트를 작성하고 모두에게 공유하세요. 당신의 메모는 누군가에게 영감을 주거나
-                  마음을 흔들어보세요. 당신의 작은 말이 전해지도록 메모를 남겨주세요.
+                  마음을 흔들 수 있습니다. 당신의 작은 말이 전해지도록 메모를 남겨주세요.
                 </p>
                 <button className='start-button'>START</button>
               </div>

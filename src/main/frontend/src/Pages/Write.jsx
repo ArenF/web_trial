@@ -2,28 +2,32 @@ import React from 'react';
 
 import "../CSS/WritePage/writeform.css";
 
+
+// 참고 https://codepen.io/steinvc/full/nOPLgv
 class WriteCard extends React.Component {
     constructor(props) {
         super(props);
-        
+        this.colors = ['white', 'black', 'orange', 'green', 'purple']
+        this.state = {
+            color: this.colors[0]
+        }
     }
 
     render() {
         return(
-            <div className='letter-box'>
-                <form action="#" id='paper' method='get'>
+            <div className='letter'>
+                <div className='flex-box'>
                     <div className='image-box'></div>
-                    <div className='title-box'>
-                        Title : <input id='title' type="text" placeholder='Title' name='title' />
+                    <div className='inline-box'>
+                        <div className='title'>
+                            Title : <input classNme='title-input' type="text" />
+                        </div>
+                        <input placeholder='@category' name='categories' className='category' type="text" />
                     </div>
-                    <textarea className='content' name='content' id='content-box'
-                    placeholder='Enter something funny'></textarea>
-                    <br />
-                    <div className='flex-box'>
-                        <input type="text" placeholder='category' className='cateogries' />
-                        <button className='upload'></button>
-                    </div>
-                </form>
+                </div>
+                <div className='write-box' placeholder='Write something funny' contentEditable='true'>
+                    
+                </div>
             </div>
         );
     }

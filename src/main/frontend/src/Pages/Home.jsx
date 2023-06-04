@@ -1,46 +1,16 @@
 import React from 'react';
+import { ImageBox, ColorBox } from './Component/BoxForm';
 
 import '../CSS/HomePage/backgroundColor.css';
 import '../CSS/HomePage/invisible.css';
 import '../CSS/HomePage/image-box.css';
 import '../CSS/HomePage/underBar.css';
 
-class ImageBox extends React.Component {
-
-    constructor(props) {
-      super(props);
-      this.state = {
-        w: this.props.width,
-        h: this.props.height,
-        imageSrc: this.props.public_image_file,
-      };
-    }
-  
-    render() {
-      const styleMessage = {
-        width: this.state.w,
-        height: this.state.h,
-        background: 'url(' + this.state.imageSrc + ')',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
-      };
-  
-      return (
-        <div className='image-box' style={styleMessage}>
-          <div className={this.props.color + '-cover'}>
-            {this.props.children}
-          </div>
-        </div>
-      );
-    }
-}
-
 class InvisibleButton extends React.Component {
 
     constructor(props) {
       super(props);
       this.name = this.props.name;
-  
     }
   
     render() {
@@ -72,8 +42,8 @@ function UnderBar() {
 export default function App() {
     return(
         <div className='blue_background'>
-          <ImageBox 
-            public_image_file='/resources/balloon.jpg'
+          <ColorBox 
+            image='/resources/balloon.jpg'
             width='100vw'
             height='100vh' 
             color='orange'
@@ -90,22 +60,22 @@ export default function App() {
               </div>
 
             </div>
-          </ImageBox>
+          </ColorBox>
           <div className='flex-sort sort-start'>
-            <ImageBox public_image_file='/resources/citystreet.jpg' width='640px' height='427px' color='blue'>
+            <ColorBox image='/resources/citystreet.jpg' width='640px' height='427px' color='blue'>
               <InvisibleButton name='City Street' />
-            </ImageBox>
-            <ImageBox public_image_file='/resources/comfortable.jpg' width='640px' height='427px' color='orange'>
+            </ColorBox>
+            <ColorBox image='/resources/comfortable.jpg' width='640px' height='427px' color='orange'>
               <InvisibleButton name='Comfortable' />
-            </ImageBox>
+            </ColorBox>
           </div>
           <div className='flex-sort sort-end'>
-            <ImageBox public_image_file='/resources/aurora.jpg' width='640px' height='427px' color='blue'>
+            <ColorBox image='/resources/aurora.jpg' width='640px' height='427px' color='blue'>
               <InvisibleButton name='Aurora' />
-            </ImageBox>
-            <ImageBox public_image_file='/resources/rest.jpg' width='640px' height='427px' color='orange'>
+            </ColorBox>
+            <ColorBox image='/resources/rest.jpg' width='640px' height='427px' color='orange'>
               <InvisibleButton name='Rest' />
-            </ImageBox>
+            </ColorBox>
           </div>
           <UnderBar/>
         </div>

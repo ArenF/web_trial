@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 class ImageBox extends React.Component {
     constructor(props) {
@@ -48,6 +48,7 @@ class ColorBox extends React.Component {
         );
     }
 }
+
 
 export { ImageBox, ColorBox };
 

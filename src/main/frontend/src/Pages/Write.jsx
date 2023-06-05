@@ -3,7 +3,7 @@ import React from 'react';
 import "../CSS/WritePage/writeform.css";
 
 
-// 참고 https://codepen.io/steinvc/full/nOPLgv
+// 참고 https://colorlib.com/etc/cf/ContactFrom_v1/index.html
 class WriteCard extends React.Component {
     constructor(props) {
         super(props);
@@ -14,23 +14,15 @@ class WriteCard extends React.Component {
 
     render() {
         return(
-            <div className='letter'>
-                <div className='flex-sort'>
-                    <div className='flex-sort sort-start'>
-                        {/* 전체적인 컴포넌트 수정 후 뷰와 나누기 */}
-                        <div className='image-box sort-start'></div>
-                    </div>
-                    <div className='flex-sort sort-end'>
-                        <div className='title-box'>
-                            <div className='write-title'>
-                                Title : <input classNme='title-input' type="text" />
-                            </div>
-                            <input placeholder='@category' name='categories' className='category' type="text" />
-                        </div>
-                    </div>
-                </div>
-                <div className='write-box' placeholder='Write something funny' contentEditable='true'>
+            <div className='letter flex-sort sort-center'>
+                <div className='dropboxs'></div>
+                <div>
+                    <p className='write-title'>Write a note</p>
+                    <input id='title' type="text" />
+                    <input id='category' type="text" />
+                    <div className='write-box' placeholder='Write something funny' contentEditable='true'>
 
+                    </div>
                 </div>
             </div>
         );

@@ -1,19 +1,25 @@
-import React, { Component } from "react";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Component, useRef, useState } from "react";
+import { ImageBox } from "./BoxForm";
+import { faArrowRight, faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../../CSS/BoardPage/imagecard.css"
 
+//게시글 카드
+//참고할 것 https://codepen.io/utilitybend/pen/bGvjLba
 class ImageCard extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            image: this.props.image,
+        }
     }
 
     render() {
         return (
             <article className="article">
                 <figure>
-                    <img src="" alt="" />
+                    <img className="article-img" src={this.state.image} alt="" />
                 </figure>
                 <div className="article-body">
                     <h2>This is Title</h2>
@@ -24,7 +30,9 @@ class ImageCard extends Component {
                     Vestibulum ultrices iaculis enim imperdiet egestas.
                     </p>
                 </div>
-                <a className="read-more" href="#">Read More <FontAwesomeIcon icon={faArrowRight} /> </a>
+                <a className="read-more" href="#">
+                    Read More <FontAwesomeIcon className="arrow-icon" icon={faArrowRight} /> 
+                </a>
             </article>
         );
     }

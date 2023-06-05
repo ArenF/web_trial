@@ -1,11 +1,10 @@
 import React from "react";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ImageCard } from "./Component/CardBoard";
 
 import "../CSS/BoardPage/board.css";
 
-//게시글 카드
-//참고할 것 https://codepen.io/utilitybend/pen/bGvjLba
 class CardBoard extends React.Component {
     constructor(props) {
         super(props);
@@ -83,6 +82,7 @@ export default function App() {
                 <CardBoard imageSrc="/resources/rest.jpg" title="Having Vacation"
                 contents="Have a rest is a important for me. so I goto the london for ..."
                 author="Mike Schumit" join="12" />
+                <ImageCard image="/resources/aurora.jpg" />
             </SecondLine>
         </div>
     );

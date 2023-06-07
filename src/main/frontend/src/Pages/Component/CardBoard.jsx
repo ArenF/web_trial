@@ -40,36 +40,36 @@ class ImageCard extends Component {
     }
 }
 
-function ImageUploadBox({ max = 10 }) {
-    const [uploadedImages, setUploadedImages] = useState([]);
-    const [previewImages, setPreviewImages] = useState([]);
+function ImageUploadBox() {
+    const [uploadedImage, setUploadedImage] = useState([]);
+    const [isImaged, setIsImaged] = useState(false);
+    const [previewImage, setPreviewImage] = useState(<ImagePreview isImaged={isImaged} />);
     const uploadBoxRef = useRef();
     const inputRef = useRef();
 
     useEffect(() => {
         const uploadBox = uploadBoxRef.current;
         const input = inputRef.current;
-    
-        //이미지 파일인지 확인한 후, 파일에서 추출해
-        //uploadedImages라는 배열에 추가하는 방식
+
+        // 파일 관리 함수
         const handleFiles = (files) => {
-            for (const file of files) {
-                if (!file.type.startsWith("image/")) continue;
-                const reader = new FileReader();
-                //load end 후 실행할 값(함수) 를 저장.
-                reader.onloadend = (e) => {
-                    const result = e.target.result;
-                    if (result) {
-                        //[...state, result] 는 state라는 
-                        // 값 방식에서 result를 다음 배열로 추가하는 방식
-                        setUploadedImages((state) => [...state, result].slice(0, max));
-                    }
-                };
-                //readAsDataURL로 파일을 read 시작.
-                reader.readAsDataURL(file);
-            }
+            const file = files[0];
+            if (!file.type.startsWith("image/")) return;
+            const reader = new FileReader();
+            
+            // load end 이벤트에 실행할 작업 설정
+            reader.onloadend = (e) => {
+                const result = e.target.result;
+                if (result) {
+                    setUploadedImage(result);
+                }
+            };
+            //실행하며 load하여 설정한 작업 같이 실행.
+            reader.readAsDataURL(file);
         };
 
+        
+        //각 이벤트 핸들러가 파일 관리 함수 실행.
         const changeHandler = (event) => {
             const files = event.target.files;
             handleFiles(files);
@@ -85,7 +85,7 @@ function ImageUploadBox({ max = 10 }) {
         const dragOverHandler = (event) => {
             event.preventDefault();
             event.stopPropagation();
-        };
+        }
 
         uploadBox.addEventListener("drop", dropHandler);
         uploadBox.addEventListener("dragover", dragOverHandler);
@@ -95,65 +95,49 @@ function ImageUploadBox({ max = 10 }) {
             uploadBox.removeEventListener("drop", dropHandler);
             uploadBox.removeEventListener("dragover", dragOverHandler);
             input.removeEventListener("change", changeHandler);
-        };
-    }, [max]);
+        }
+    });
 
-    //uploadedImages의 값이 변동되엇을 때.
+    // 이곳에 uploadedImage 값을 받아, ImagePreview 컴포넌트를 생성 후
+    // previewImage 변수에 저장.
     useEffect(() => {
-        const ImageJSXs = uploadedImages.map((image, index) => {
-            const isDeleteImage = (element) => {
-                return element === image;
-            };
-            const deleteFunc = () => {
-                uploadedImages.splice(uploadedImages.findIndex(isDeleteImage), 1);
-                setUploadedImages([...uploadedImages]);
-            };
-            return <ImagePreview image={image} deleteFunc={deleteFunc} key={index} />
-        });
-        console.log(ImageJSXs);
-        setPreviewImages(ImageJSXs);
-    }, [uploadedImages]);
+        console.log(uploadedImage);
+        setIsImaged(true)
+        setPreviewImage(<ImagePreview image={uploadedImage} isImaged={isImaged} />);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [uploadedImage]);
 
     return (
         <div className="imageuploadbox">
-          {/* <label className="drag_or_click" ref={uploadBoxRef}>
-            <div className="text_box">
-              <h3>드래그 또는 클릭하여 업로드</h3>
-              <span>권장사항: oooMB 이하 고화질</span>
-            </div>
-            <div className="icon_box">
-              <i className="fas fa-arrow-circle-up"></i>
-            </div>
-          </label> */}
-          <div className="dnd-card" ref={uploadBoxRef}>
-            <div 
-            className="display"
-            style={{}}
-            >
-                <FontAwesomeIcon className="dnd-text icon" icon={faCamera} />
-                <p className="dnd-text">Drag Image to here!</p>
-            </div>
-          </div>
-          <input type="file" accept="image/*" id="sdfsd" ref={inputRef} />
-          <div className="preview_wrapper">
-            <div className="preview_container">{previewImages}</div>
-          </div>
+            <div ref={uploadBoxRef}>{previewImage}</div>
+            <input type="file" accept="image/*" ref={inputRef} />
         </div>
     );
 }
 
-function ImagePreview({ image, deleteFunc}) {
-    return (
-        <div className="imagepreview" draggable={true}>
+function ImagePreview({ image, isImaged }) {
+    
+    const noneElement = (
+        <div className="none-imagepreview">
+            <FontAwesomeIcon className="dnd-text icon" icon={faCamera}/>
+            <p className="dnd-text">Drag Image to Here</p>
+        </div>
+    );
+
+    const previewElement = (
+        <div className="imagepreview">
             <img src={image} alt="" />
-            <div className="icon-container" onClick={deleteFunc}>
-                <FontAwesomeIcon icon={faTimes}/>
-            </div>
         </div>
     );
+
+    if (isImaged) {
+        return previewElement;
+    } else {
+        return noneElement;
+    }
 }
 
-function InputUploadBox() {
+function InputBox() {
     return (
         <section>
             <input 
@@ -183,7 +167,7 @@ function WriteCard() {
                 <ImageUploadBox />
             </div>
             <div className="right-box">
-                <InputUploadBox />
+                <InputBox />
             </div>
         </div>
     );

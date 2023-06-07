@@ -79,9 +79,7 @@ export default function App() {
                 author="John Smith" join="10" />
             </FirstLine>
             <SecondLine>
-                <CardBoard imageSrc="/resources/rest.jpg" title="Having Vacation"
-                contents="Have a rest is a important for me. so I goto the london for ..."
-                author="Mike Schumit" join="12" />
+                <ImageCard image="/resources/camera.jpg" />
                 <ImageCard image="/resources/aurora.jpg" />
             </SecondLine>
         </div>

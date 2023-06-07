@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
 .article {
     --img-scale: 1.001;
     --title-color: black;
@@ -11,6 +13,7 @@
     transition: all 0.4s ease-in-out;
     overflow: hidden;
     width: 20rem;
+    display: block;
 }
 
 .article-body {
@@ -35,12 +38,29 @@
 
 /* 타이틀 */
 .article h2 {
-    margin: 0 0 18px 0;
-    font-family: "Bebas Neue", cursive;
-    font-size: 1.9rem;
+    margin: 0 0 0 0;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.2rem;
     letter-spacing: 0.06em;
     color: var(--title-color);
     transition: color 0.3s ease-out;
+}
+
+.article p {
+    color: #878787;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 2.5em;
+}
+
+.article .line {
+    margin: 0;
+    width: 12rem;
+    border-bottom: 1px solid #28666e;
+
 }
 
 figure {

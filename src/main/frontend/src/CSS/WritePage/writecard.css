@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+.colored-background {
+    background-color: white;
+}
+
+.flex-card {
+    width: 800px;
+    height: 560px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 15px;
+
+}
+
+.write-image {
+    justify-content: left;
+    width: fit-content;
+    height: fit-content;
+    background-size: contain;
+
+}
+
+.left-box {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-box {
+    width: 50%;
+    height: 100%;
+    float: right;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-box > section {
+    padding: 15px;
+}
+
+.right-box > section > * {
+    margin: 1rem 0;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.right-box input {
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding: 0.5em;
+    background-color: lightgray;
+}
+
+.right-box > * {
+    border: 1px solid red;
+    
+}
+
+.contents {
+    text-align: start;
+    background-color: lightgray;
+    border-radius: 10px;
+    min-height: 5em;
+    border: 1px solid gray;
+    padding: 0.5em;
+    
+}
+
+[contenteditable=true]:empty::before {
+    content: attr(placeholder);
+    display: block;
+    color: gray;
+}

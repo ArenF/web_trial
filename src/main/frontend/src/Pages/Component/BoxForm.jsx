@@ -49,7 +49,6 @@ class ColorBox extends React.Component {
     }
 }
 
-
 export { ImageBox, ColorBox };
 
 // class ImageBackground extends React.Component {

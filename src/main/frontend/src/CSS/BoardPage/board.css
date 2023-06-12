@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(227, 227, 227);
+    background-color: #DEEFE7;
     box-sizing: border-box;
 }
 
@@ -103,7 +103,6 @@ body {
 .second-line {
     max-width: fit-content;
     position: relative;
-    border: 1px solid red;
     padding: 1rem 1rem;
     padding-top: 8rem ;
 }

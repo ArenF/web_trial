@@ -1,0 +1,27 @@
+.search-bar {
+    position: relative;
+    width: 100%;
+    padding-top: 4rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+    width: 24rem;
+    height: 2.5rem;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 8rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search:focus {
+    outline: none;
+    border: none;
+}

@@ -3,7 +3,7 @@
 }
 
 .colored-background {
-    background-color: #91BBF2;
+    background-color: #F7F3E9;
 }
 
 .flex-card {
@@ -52,26 +52,40 @@
 }
 
 .right-box > section > * {
-    margin: 1rem 0;
     align-items: center;
-    vertical-align: middle;
 }
 
 .right-box input {
-    border: 1px solid gray;
-    border-radius: 25px;
-    padding: 0.5em;
-    background-color: lightgray;
+    margin: 0.5rem 0;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75em;
+    background-color: #F9E19F;
+}
+
+.right-box input:focus {
+    border: none;
+    outline: none;
 }
 
 .contents {
+    margin: 0.5rem 0;
     text-align: start;
-    background-color: lightgray;
+    background-color: #F9E19F;
     border-radius: 10px;
     min-height: 5em;
-    border: 1px solid gray;
     padding: 0.5em;
-    
+    border: none;
+}
+.contents > * {
+    border-bottom: 1px solid #ffebb4;
+}
+
+.contents:focus {
+    outline: none;
+    border: none;
 }
 
 [contenteditable=true]:empty::before {
@@ -81,6 +95,8 @@
 }
 
 .send-button {
+    margin-top: 1rem;
+    cursor: pointer;
     position: relative;
     left: 50%;
     transform: translateX(-50%);

@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage"; 
+import { getDatabase } from "firebase/database"; 
 
 
 const firebaseConfig = {
@@ -13,7 +15,9 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
 const auth = getAuth(app);
+const database = getDatabase(app, 'https://project-react-ac890-default-rtdb.asia-southeast1.firebasedatabase.app/');
 
 
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+export { app, auth, storage, database };

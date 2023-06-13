@@ -40,7 +40,7 @@
 .article h2 {
     margin: 0 0 0 0;
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: 0.06em;
     color: var(--title-color);
     transition: color 0.3s ease-out;

@@ -75,3 +75,14 @@
 .signup-link a {
   text-decoration: underline;
 }
+
+.login-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.login-link a {
+  text-decoration: underline;
+}

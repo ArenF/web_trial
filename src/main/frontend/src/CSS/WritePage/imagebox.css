@@ -1,5 +1,4 @@
 
-
 .dnd-card {
     position: relative;
     min-width: 15rem;
@@ -27,6 +26,7 @@
 
 .none-imagepreview {
     min-height: fit-content;
+    width: 100%;
     padding: 4em;
     border: 2px solid #04BFAD;
     border-radius: 25px;
@@ -36,7 +36,7 @@
 .imagepreview {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     
 }
 

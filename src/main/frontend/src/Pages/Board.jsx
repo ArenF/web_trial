@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
-import { ImageCard, DtoImageCard } from "./Component/CardBoard";
+import React, { useEffect, useState } from "react";
+import { DtoImageCard } from "./Component/CardBoard";
 import { SearchBar } from "./Component/Bars";
 
 import "../CSS/BoardPage/board.css";
 import "../CSS/BoardPage/searchBar.css";
 import { database } from "../firebase";
-import { ref, child, get, onValue, query } from "firebase/database";
+import { ref, onValue, } from "firebase/database";
 
 function FirstLine(props) {
+    
     return (
-        <div className="first-line">
+        <div className="line-setter">
             {props.children}
         </div>
     );
@@ -48,9 +49,15 @@ export default function App() {
             const data = snapshot.val();
 
             if (snapshot.exists()) {
-                Object.values(data).map((card) => {
 
-                    setCardList((cards) => [...cards, card]);
+                Object.values(data).map((card) => {
+                    setCardList((cards) => {
+                        if (cards.includes(card)) {
+                            return [...cards];
+                        } else {
+                            return [...cards, card];
+                        }
+                    });
                 });
             } else {
                 console.log("NO DATA CONFERENCE");
@@ -70,6 +77,7 @@ export default function App() {
             <div className="flex">
                 <FirstLine>
                     {cardList.map((component) => {
+
                         console.log(component);
                         return (
                             <DtoImageCard title={component.title}

@@ -74,6 +74,7 @@ figure {
     align-items: center;
     text-decoration: none;
     color: #28666e;
+    margin: 0.75rem;
 }
 
 .article a:focus {

@@ -52,19 +52,21 @@ export function DtoImageCard({ title, contents, image }) {
     }, []);
 
     return (
-        <article className="article">
-            <figure>
-                <img className={"article-img " + image} src="" alt="" />
-            </figure>
-            <div className="article-body">
-                <h2>{title}</h2>
-                <div className="line"></div>
-                <p>{contents}</p>
-            </div>
-            <a className="read-more" href="/board">
-                Read More <FontAwesomeIcon className="arrwo-icon" icon={faArrowRight} />
-            </a>
-        </article>
+        <div>
+            <article className="article">
+                <figure>
+                    <img className={"article-img " + image} src="" alt="" />
+                </figure>
+                <div className="article-body">
+                    <h2>{title}</h2>
+                    <div className="line"></div>
+                    <p>{contents}</p>
+                </div>
+                <a className="read-more" href="/board">
+                    Read More <FontAwesomeIcon className="arrwo-icon" icon={faArrowRight} />
+                </a>
+            </article>
+        </div>
     )
 }
 

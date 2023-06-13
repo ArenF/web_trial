@@ -92,6 +92,36 @@ body {
     position: relative;
 }
 
+.line-setter {
+    padding-top: 3rem;
+    padding: 1rem 1rem;
+    max-width: 100vw;
+    max-height: 90rem;
+    position: relative;
+    margin-top: 4rem;
+}
+
+.line-setter > * {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.line-setter > * > article {
+    position: relative;
+}
+
+.line-setter > *:nth-child(even) {
+    padding-top: 3rem;
+    transform: translateY(-20%);
+}
+
+.line-setter > *:nth-child(odd) {
+    padding-bottom: 3rem;
+}
+
 .first-line {
     max-width: fit-content;
     position: relative;

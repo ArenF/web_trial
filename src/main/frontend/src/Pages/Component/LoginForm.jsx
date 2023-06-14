@@ -16,7 +16,10 @@ import {
 export async function registerEmail(email, password) {
     try {
         await createUserWithEmailAndPassword(auth, email, password).then(
-            (a) => {}
+            () => {
+              alert("your account successfully regist!");
+              toLogin();
+            }
         );
     } catch(error) {
         return error.message.replace("Firebase: Error ", "");
@@ -26,6 +29,10 @@ export async function registerEmail(email, password) {
 // 로그인이 성공한다면 board페이지로
 function toBoard() {
   window.location.href = '/board';
+}
+
+function toLogin() {
+  window.location.href = '/login';
 }
 
 //이메일로 로그인하는 함수

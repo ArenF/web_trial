@@ -23,14 +23,19 @@ export async function registerEmail(email, password) {
     }
 }
 
+// 로그인이 성공한다면 board페이지로
+function toBoard() {
+  window.location.href = '/board';
+}
+
 //이메일로 로그인하는 함수
 export async function loginWithEmail(email, password) {
     try {
-        await signInWithEmailAndPassword(auth, email, password);
-        console.log("it work!");
+      await signInWithEmailAndPassword(auth, email, password);
+      toBoard();
     } catch (error) {
-        console.log("it wasn't work!");
-        return error.message.replace("Firebase: Error ", "");
+      alert("Login Failed!");
+      return error.message.replace("Firebase: Error ", "");
     }
 }
 
